@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run: echo "second build"
       - run: sleep 25      
-worksflows:
+workflows:
   version: 2
   one_and_two:
     jobs:
