@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: echo "This is build job"
-      - run: apt install unzip
+      - run: sudo apt install unzip
       - run: sleep 25
   test:
     docker:
