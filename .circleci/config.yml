@@ -14,6 +14,7 @@ jobs:
       - run: sudo mv terraform /usr/local/bin/
       - run: terraform --version
       - run: which terraform
+      - run: /usr/local/bin/terraform plan
   
 workflows:
   version: 2
