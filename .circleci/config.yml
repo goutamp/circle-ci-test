@@ -13,6 +13,7 @@ jobs:
       - run: unzip terraform_0.12.18_linux_amd64.zip
       - run: sudo mv terraform /usr/local/bin/
       - run: terraform --version
+      - run: terraform plan
   
 workflows:
   version: 2
