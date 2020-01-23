@@ -15,7 +15,7 @@ jobs:
       - run: terraform --version
       - run: which terraform
       - run: pwd
-  
+      - run: sudo find /home/circleci/project -name iam.tf
 workflows:
   version: 2
   build:
