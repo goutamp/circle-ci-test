@@ -14,7 +14,7 @@ jobs:
       - run: sudo mv terraform /usr/local/bin/
       - run: terraform --version
       - run: which terraform
-      - run: sudo find / -name iam.tf
+      - run: pwd
   
 workflows:
   version: 2
