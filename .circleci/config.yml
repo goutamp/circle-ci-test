@@ -8,28 +8,15 @@ jobs:
       - checkout
       - run: echo "This is build job"
       - run: sudo apt install unzip
-      - run: sleep 25
-  test:
-    docker:
-      - image: circleci/ruby:2.4.1
-    steps:
-      - checkout
-      - run: echo "This is test job"
-      - run: sleep 15
-  deploy:
-    docker:
-      - image: circleci/ruby:2.4.1
-    steps:
-      - checkout
-      - run: echo "This is deploy job"
-      - run: sleep 15
+      - run: sudo apt install wget
+      - run: wget https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip
+      - run: unzip terraform_0.12.18_linux_amd64.zip
+      - run: sudo mv terraform /usr/local/bin/
+      - run: terraform --version
+  
 workflows:
   version: 2
-  build_and_test:
+  build:
     jobs:
       - build
-      - test
-      - deploy:
-         requires: 
-             - test
-         
+      
