@@ -99,7 +99,7 @@ workflows:
           filters:
             branches:
               only:
-                - circle-ci-test
+                - master
 
       - infra_plan:
           requires:
