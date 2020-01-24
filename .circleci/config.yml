@@ -12,7 +12,7 @@ install_dependencies: &install_dependencies
     apk add --no-cache py-pip
     pip install awscli
 
-
+#jobs steps
 jobs:
   sts:
     docker:
@@ -39,6 +39,39 @@ jobs:
             - .aws/credentials
             - .env
 
+  infra_plan:
+    docker:
+      - image: hashicorp/terraform:0.12.18
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Init
+          command: |
+            . ~/.env
+            #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
+            terraform init -backend=false ./adfs-test
+      - run:
+          name: Set workspace
+          command: |
+            . ~/.env
+            #terraform workspace new $ENVIRONMENT ./terraform/ || true
+            #terraform workspace select $ENVIRONMENT ./terraform/
+      - run:
+          name: Validate
+          command: |
+            terraform validate ./adfs-test
+            ls -larth ./adfs-test
+            #ls -larth terraform/env*
+            #terraform state list -state=terraform/bliss
+            #exit 0
+      - run:
+          name: Plan
+          command: |
+            . ~/.env
+            #terraform plan -var-file="./terraform/environments/${ENVIRONMENT}.tfvars" ./terraform/
+
   cleanup:
     docker:
       - image: python:2
@@ -55,7 +88,6 @@ jobs:
             python --version
             #python readfromfileandeachcmd.py aws_commands.txt
 
-
 workflows:
   version: 2
   build:
@@ -64,3 +96,15 @@ workflows:
       - cleanup:
           requires:
             - sts
+          filters:
+            branches:
+              only:
+                - circle-ci-test
+
+      - infra_plan:
+          requires:
+            - sts
+          filters:
+            branches:
+              only:
+                - circle-ci-test
