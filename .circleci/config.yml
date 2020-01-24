@@ -64,7 +64,3 @@ workflows:
       - cleanup:
           requires:
             - sts
-          filters:
-            branches:
-              only:
-                - master
