@@ -22,3 +22,8 @@ variable "provider_name" {
   description = "Provide the idp provider name"
   type        = "string"
 }
+variable "module_name" {
+  description = "Module Name"
+  type        = string
+  default     = "aws-adfs"
+}
