@@ -1,6 +1,6 @@
 module "aws-adfs" {
   source           = "git::github.com/goutamp/adfs-test.git//adfs-custom"
-  source           = "git:github.com/goutamp/circle-ci-test.git//adfs-test"
+  source           = "git::github.com/goutamp/circle-ci-test.git//adfs-test/templates"
   app_name         = "${var.app_name}"
   app_parent       = "${var.app_parent}"
   target_region    = "${var.target_region}"
