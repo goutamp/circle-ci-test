@@ -1,8 +1,4 @@
 
-module "template_file1" {
-  source          = "git::github.com/goutamp/circle-ci-test.git//adfs-test/templates"
-}
-
 module "aws-adfs" {
   source           = "git::github.com/goutamp/adfs-test.git//adfs-custom"
   app_name         = "${var.app_name}"
