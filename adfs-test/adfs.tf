@@ -1,3 +1,8 @@
+
+module "template_path" {
+  source          = "git::github.com/goutamp/circle-ci-test.git//adfs-test/templates"
+}
+
 module "aws-adfs" {
   source           = "git::github.com/goutamp/adfs-test.git//adfs-custom"
   app_name         = "${var.app_name}"
@@ -5,8 +10,3 @@ module "aws-adfs" {
   target_region    = "${var.target_region}"
   aws_account_name = "${var.aws_account_name}"
   provider_name    = "${var.provider_name}"
-}
-
-module "template_path" {
-  source          = "git::github.com/goutamp/circle-ci-test.git//adfs-test/templates"
-}
