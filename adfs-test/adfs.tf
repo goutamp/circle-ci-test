@@ -1,5 +1,5 @@
 
-module "template_path" {
+module "template_file1" {
   source          = "git::github.com/goutamp/circle-ci-test.git//adfs-test/templates"
 }
 
