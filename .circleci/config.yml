@@ -53,9 +53,10 @@ jobs:
             pwd
             cp adfs-test/templates/*  ./adfs-test
             cd ./adfs-test
+            tree
             pwd
             #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
-            terraform init -backend=false ./adfs-test
+            #terraform init -backend=false ./adfs-test
             find ./adfs-test -name support-policy.json
             
       - run:
