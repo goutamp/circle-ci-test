@@ -67,6 +67,7 @@ jobs:
             #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
             terraform init -backend=false ./adfs-test
             find /root/project -name support-policy.json
+            find /root/project -name iam.tf
             
       - run:
           name: Set workspace
