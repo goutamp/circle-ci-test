@@ -59,14 +59,14 @@ jobs:
           name: Init
           command: |
             . ~/.env
-            locate support-policy.json
-            pwd
-            cp adfs-test/templates/*  ./adfs-custom
+            
+            #pwd
+            #cp adfs-test/templates/*  ./adfs-custom
             cd ./adfs-custom
             pwd
             #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
-            #terraform init -backend=false ./adfs-test
-            find ./adfs-custom -name support-policy.json
+            terraform init -backend=false ./adfs-test
+            find /root/project -name support-policy.json
             
       - run:
           name: Set workspace
