@@ -51,7 +51,7 @@ jobs:
           command: |
             . ~/.env
             pwd
-            #cp ./circle-ci-test/adfs-test/  ./adfs-custom/
+            #cp /root/project/*  ./adfs-custom/
             #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
             terraform init -backend=false ./adfs-test
       - run:
