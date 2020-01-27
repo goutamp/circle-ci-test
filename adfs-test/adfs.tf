@@ -1,5 +1,5 @@
 
-module "aws-adfs" {
+module "aws-adfs1" {
   source           = "git::github.com/goutamp/adfs-test.git//adfs-custom"
   app_name         = "${var.app_name}"
   app_parent       = "${var.app_parent}"
