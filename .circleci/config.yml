@@ -52,7 +52,7 @@ jobs:
             . ~/.env
             pwd
             cp adfs-test/templates/*  ./adfs-test
-            cd ./adfs
+            cd ./adfs-test
             pwd
             #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
             terraform init -backend=false ./adfs-test
