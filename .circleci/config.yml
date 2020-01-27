@@ -54,7 +54,7 @@ jobs:
             cp adfs-test/templates/*  ./adfs-test/
             #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
             terraform init -backend=false ./adfs-test
-            find / -name support-policy.json
+            
       - run:
           name: Set workspace
           command: |
