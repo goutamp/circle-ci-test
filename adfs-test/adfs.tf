@@ -6,5 +6,4 @@ module "aws-adfs1" {
   target_region    = "${var.target_region}"
   aws_account_name = "${var.aws_account_name}"
   provider_name    = "${var.provider_name}"
-  module_name      = "${var.module_name}"
 }
