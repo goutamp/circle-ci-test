@@ -53,6 +53,7 @@ jobs:
             pwd
             find /root/project -name support-policy.json
             find /root/project -name "adfs-custom"
+            find /root/project -name iam.tf
             
       - run:
           name: Init
