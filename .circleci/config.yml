@@ -46,6 +46,12 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/
+      - run: 
+          name: check the pwd
+          command: |
+            . ~/.env
+            pwd
+            
       - run:
           name: Init
           command: |
