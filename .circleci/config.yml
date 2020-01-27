@@ -50,6 +50,7 @@ jobs:
           name: Init
           command: |
             . ~/.env
+            locate support-policy.json
             pwd
             cp adfs-test/templates/*  ./adfs-custom
             cd ./adfs-custom
