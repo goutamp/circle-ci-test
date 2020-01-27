@@ -53,7 +53,7 @@ jobs:
             pwd
             cp adfs-test/templates/*  ./adfs-custom
             #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
-            terraform init -backend=false ./adfs-test
+            terraform init -backend=false ./terraform
             
       - run:
           name: Set workspace
