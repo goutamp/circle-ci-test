@@ -51,12 +51,12 @@ jobs:
           command: |
             . ~/.env
             pwd
-            cp adfs-test/templates/*  ./adfs-test
-            cd ./adfs-test
+            cp adfs-test/templates/*  ./adfs-custom
+            cd ./adfs-custom
             pwd
             #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
             #terraform init -backend=false ./adfs-test
-            find ./adfs-test -name support-policy.json
+            find ./adfs-custom -name support-policy.json
             
       - run:
           name: Set workspace
