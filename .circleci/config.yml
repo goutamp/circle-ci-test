@@ -51,7 +51,7 @@ jobs:
           command: |
             . ~/.env
             pwd
-            find /root/prject -name support-policy.json
+            find /root/project -name support-policy.json
             find /root/project -name "adfs-custom"
             
       - run:
