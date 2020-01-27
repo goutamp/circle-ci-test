@@ -62,7 +62,7 @@ jobs:
             
             #pwd
             #cp adfs-test/templates/*  ./adfs-custom
-            cd ./adfs-custom
+            #cd ./adfs-custom
             pwd
             #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
             terraform init -backend=false ./adfs-test
