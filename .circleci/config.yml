@@ -51,7 +51,7 @@ jobs:
           command: |
             . ~/.env
             pwd
-            cp adfs-test/templates/*  ./adfs-custom/
+            cp adfs-test/templates/*  ./adfs-custom
             #cp terraform_modules_v12/aws.tf ./terraform_modules_v12/sub_modules/vpc
             terraform init -backend=false ./adfs-test
             
