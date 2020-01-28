@@ -88,6 +88,7 @@ jobs:
           name: Plan
           command: |
             . ~/.env
+            terraform plan ./adfs-test
             #terraform plan -var-file="./terraform/environments/${ENVIRONMENT}.tfvars" ./terraform/
 
   cleanup:
